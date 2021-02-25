@@ -5,7 +5,7 @@
   top: 0;
   bottom: 0;
   left: 0;
-  width: pxrem(350);
+  width: pxrem(380);
   background: white;
   box-shadow: 3px 0 30px rgba(#f7f8fc, 0.17);
   display: flex;
@@ -14,16 +14,6 @@
   z-index: 2000;
 }
 
-.logo {
-  flex: 0 0;
-  margin-bottom: 30px;
-  img {
-    display: block;
-    padding: 20px 30px;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-}
 .menu {
   flex: 1 0;
   overflow-y: scroll;
@@ -38,25 +28,38 @@
 }
 
 .menu-items {
-  .collapsable {
-    display: flex;
-    justify-content: space-between;
+  .collapsible-content {
     border-bottom: 1px solid #f2f2f8;
-    padding: 5px;
-    a.item {
-      text-decoration: none;
-      color: #9396a0;
-      display: block;
-      padding: 10px 23px;
+    .collapsible {
       display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      font-weight: 600;
+      justify-content: space-between;
+      padding: 5px;
+      a.item {
+        text-decoration: none;
+        color: #9396a0;
+        display: block;
+        padding: 10px 23px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-weight: 600;
+      }
+      &:hover {
+        a,
+        i.material-icons {
+          color: #283b98;
+        }
+      }
     }
-    &:hover {
-      a,
-      i.material-icons {
-        color: #283b98;
+    .content {
+      a {
+        margin-left: pxrem(75);
+        color: #9396a0;
+        padding-bottom: pxrem(20);
+        display: block;
+        &:hover {
+          color: #283b98;
+        }
       }
     }
   }
