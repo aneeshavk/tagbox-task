@@ -1,0 +1,26 @@
+@import "../styles/function";
+
+.checklist-wrapper {
+  background-color: #f7f8fc;
+  // margin: pxrem(20);
+  padding: pxrem(30);
+  .list {
+    h1 {
+      color: #000331;
+    }
+    .dash-table {
+      flex: 1 1 0;
+      margin-top: pxrem(35);
+      height: calc(100vh - 150px);
+    }
+  }
+}
+
+$tablet: 1024px;
+$mobile: 414px;
+
+@media (max-width: $tablet), (max-device-width: $tablet) {
+  .dashboard-content {
+    overflow: scroll;
+  }
+}

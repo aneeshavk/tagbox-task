@@ -1,0 +1,46 @@
+<div class="checklist-wrapper">
+  <div class="list">
+    <div class="dash-table">
+      <sa-data-table
+        [scrollbarVisible]="true"
+        [data]="users"
+        [title]="'Check Lists'"
+        [selectable]="false"
+        [perPage]="perPage"
+        [total]="total"
+        (filter)="getUsers()"
+        [initialLoad]="true"
+        [perPageOptions]="[5]"
+      >
+        <sa-column header="User ID">
+          <ng-template #colTemplate let-data>
+            <div class="col">
+              {{ data.id ? data.id : "--" }}
+            </div>
+          </ng-template>
+        </sa-column>
+        <sa-column header="Email">
+          <ng-template #colTemplate let-data>
+            <div class="col">
+              {{ data.email ? data.email : "--" }}
+            </div>
+          </ng-template>
+        </sa-column>
+        <sa-column header="First Name">
+          <ng-template #colTemplate let-data>
+            <div class="col">
+              {{ data.first_name ? data.first_name : "--" }}
+            </div>
+          </ng-template>
+        </sa-column>
+        <sa-column header="Last Name">
+          <ng-template #colTemplate let-data>
+            <div class="col">
+              {{ data.last_name ? data.last_name : "--" }}
+            </div>
+          </ng-template>
+        </sa-column>
+      </sa-data-table>
+    </div>
+  </div>
+</div>

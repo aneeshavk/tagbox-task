@@ -1,0 +1,5 @@
+$pxremval: 16;
+
+@function pxrem($val) {
+    @return $val/$pxremval * 1rem;
+}
