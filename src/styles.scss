@@ -1,89 +1,117 @@
+$font: 'Noto Sans HK', sans-serif;
+
+* {
+    box-sizing: border-box;
+}
+
 html {
-  font-family: "Noto Sans HK", sans-serif;
-  font-size: 13px;
+    font-family: $font;
+    font-size: 13px;
 }
 
 body {
-  margin: 0;
+    margin: 0;
+    background: #f7f8fc;
+}
+
+input,
+button {
+    font-family: $font;
 }
 
 .popup-background {
-  z-index: 999;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba($color: #ffff, $alpha: 0.5);
-  .popup {
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 1.375rem 1.5625rem;
-    max-height: 90vh;
-    max-width: 40vw;
+    z-index: 2999;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-    .head {
-      flex: 0 0 auto;
-      padding: 1.375rem 1.5625rem;
-      border-bottom: 1px solid #cbd2d9;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      h2 {
-        margin: 0;
-        font-size: pxrem(20);
-        font-weight: 600;
-        color: #283b98;
-      }
-    }
-
-    .form-items {
-      .form-item {
-        margin: 15px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba($color: #ffff, $alpha: 0.5);
+    .popup {
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 1.375rem 1.5625rem;
+        max-height: 90vh;
+        max-width: 90%;
         display: flex;
-        justify-content: space-between;
-        label {
-          display: block;
-          width: 100%;
-          color: #9396a0;
-          margin-bottom: 4px;
-          margin-top: 9px;
-          margin-left: 9px;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        .head {
+            flex: 0 0 auto;
+            padding: 1.375rem 1.5625rem;
+            border-bottom: 1px solid #cbd2d9;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            h2 {
+                margin: 0;
+                font-size: pxrem(20);
+                font-weight: 600;
+                color: #283b98;
+            }
         }
-        input,
-        select {
-          background: #fff;
-          display: block;
-          width: 100%;
-          border-radius: 4px;
-          border: 1px solid #cbd2d9;
-          padding: 0.5rem 1.25rem;
+
+        .form-items {
+            .form-item {
+                margin: 15px;
+                display: flex;
+                justify-content: space-between;
+                label {
+                    display: block;
+                    width: 100%;
+                    color: #9396a0;
+                    margin-bottom: 4px;
+                    margin-top: 9px;
+                    margin-left: 9px;
+                }
+                input,
+                select {
+                    background: #fff;
+                    display: block;
+                    width: 100%;
+                    border-radius: 4px;
+                    border: 1px solid #cbd2d9;
+                    padding: 0.5rem 1.25rem;
+                }
+            }
         }
-      }
+        .foot {
+            padding: 1.375rem 1.5625rem;
+            padding-top: 0;
+            display: flex;
+            justify-content: flex-end;
+            button {
+                margin-right: pxrem(20);
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
     }
-    .foot {
-      padding: 1.375rem 1.5625rem;
-      padding-top: 0;
-      display: flex;
-      justify-content: flex-end;
-      button {
-        margin-right: pxrem(20);
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-    }
-  }
 }
 
-.sa-table-title {
-  h1 {
-    color: #283b98 !important;
-  }
+.list-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    h1 {
+        font-size: pxrem(30);
+        color: #283b98;
+        margin: 0;
+    }
+}
+
+$small: 835px;
+
+@media (max-width: $small), (max-device-width: $small) {
+    .settings {
+        flex: 1 1 auto;
+        .extra {
+            flex: 1 1 auto;
+        }
+    }
 }

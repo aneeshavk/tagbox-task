@@ -1,4 +1,15 @@
-@import "../styles/function";
+@import '../styles/function';
 .content {
-  margin-left: pxrem(350);
+    margin-left: pxrem(380);
+    height: 100vh;
+}
+
+$small: 835px;
+
+@media (max-width: $small), (max-device-width: $small) {
+    .content {
+        margin-left: 0;
+        margin-top: 80px;
+        height: calc(100vh - 80px);
+    }
 }
