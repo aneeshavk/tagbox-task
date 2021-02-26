@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
     styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent {
-    public visible: false;
+    public visible = false;
 
     constructor() {}
 
