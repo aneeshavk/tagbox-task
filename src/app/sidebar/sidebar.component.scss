@@ -65,8 +65,12 @@
   }
 }
 i.material-icons {
-  margin-right: 12px;
+  margin-right: pxrem(12);
   color: #cfd3df;
+}
+
+.logo{
+  padding:pxrem(20)
 }
 
 $tablet: 1024px;

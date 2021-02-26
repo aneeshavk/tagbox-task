@@ -43,15 +43,46 @@
         <ng-template #headerExtraRight>
           <div class="actions" style="display: flex">
             <div class="search-box" style="margin-right: 11px">
-              <input type="text" placeholder="Search" />
+              <input [(ngModel)]="searchWord"(input)="search()" type="text" placeholder="Search" />
               <i class="material-icons">search</i>
             </div>
             <div class="button-action">
-              <button>Create</button>
+              <button (click)="createCheckList = true">Create</button>
             </div>
           </div>
         </ng-template>
       </sa-data-table>
+    </div>
+  </div>
+</div>
+<div *ngIf="createCheckList" class="popup-background">
+  <div class="popup">
+    <div class="head">
+      <h2>Create Checklist</h2>
+      <i
+        style="cursor: pointer"
+        (click)="createCheckList = false"
+        class="material-icons"
+        >close</i
+      >
+    </div>
+    <div class="form-items">
+      <div class="form-item" style="display: flex">
+        <label> Email</label>
+        <input type="email"/>
+      </div>
+      <div class="form-item" style="display: flex">
+        <label>First Name</label>
+        <input />
+      </div>
+      <div class="form-item" style="display: flex">
+        <label>Last Name</label>
+        <input />
+      </div>
+
+      <div class="foot">
+        <button class="pop-btn" (click)="createCheckList = false">Create</button>
+      </div>
     </div>
   </div>
 </div>

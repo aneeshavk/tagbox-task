@@ -10,6 +10,7 @@ import { LayoutComponent } from "./layout/layout.component";
 import { NgSaDataTableModule } from "ng-sa-data-table";
 import { CheckListService } from "./services/checklist.service";
 import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HttpClientModule } from "@angular/common/http";
     AppRoutingModule,
     NgSaDataTableModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [CheckListService],
   bootstrap: [AppComponent],

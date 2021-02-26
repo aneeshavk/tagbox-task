@@ -1,6 +1,6 @@
 import { elementEventFullName } from "@angular/compiler/src/view_compiler/view_compiler";
-import { Component } from "@angular/core";
-import { User } from '../models/checklist.model';
+import { Component, Input, OnInit, Output, EventEmitter } from "@angular/core";
+import { User } from "../models/checklist.model";
 import { CheckListService } from "../services/checklist.service";
 
 @Component({
@@ -9,9 +9,18 @@ import { CheckListService } from "../services/checklist.service";
   styleUrls: ["./check-list.component.scss"],
 })
 export class CheckListComponent {
+  @Output() searchcriteria = new EventEmitter<String>();
+
   users: User;
+
   total: number;
+
   perPage: number;
+
+  createCheckList = false;
+
+  searchWord: string;
+
   constructor(private _checkList: CheckListService) {
     this.getUsers();
   }
@@ -26,5 +35,9 @@ export class CheckListComponent {
         console.log(r);
       }
     });
+  }
+
+  search() {
+    this.searchcriteria.emit(this.searchWord);
   }
 }
